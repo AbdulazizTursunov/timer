@@ -9,8 +9,7 @@ class App extends StatelessWidget {
   const App({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context)=> MaterialApp(
       title: 'Flutter Timer',
       theme: ThemeData(
         primaryColor: const Color.fromRGBO(109, 234, 255, 1),
@@ -21,4 +20,3 @@ class App extends StatelessWidget {
       home: const TimerPage(),
     );
   }
-}

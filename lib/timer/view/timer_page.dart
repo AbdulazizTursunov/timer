@@ -8,20 +8,18 @@ class TimerPage extends StatelessWidget {
   const TimerPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
+  Widget build(BuildContext context)=> BlocProvider(
       create: (_) => TimerBloc(ticker: const Ticker()),
       child: const TimerView(),
     );
   }
-}
+
 
 class TimerView extends StatelessWidget {
   const TimerView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context)=>  Scaffold(
       appBar: AppBar(title: const Text('Flutter Timer')),
       body: const Stack(
         children: [
@@ -40,7 +38,7 @@ class TimerView extends StatelessWidget {
       ),
     );
   }
-}
+
 
 class TimerText extends StatelessWidget {
   const TimerText({super.key});
@@ -62,8 +60,7 @@ class Actions extends StatelessWidget {
   const Actions({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<TimerBloc, TimerState>(
+  Widget build(BuildContext context)=> BlocBuilder<TimerBloc, TimerState>(
       buildWhen: (prev, state) => prev.runtimeType != state.runtimeType,
       builder: (context, state) {
         return Row(
@@ -115,14 +112,13 @@ class Actions extends StatelessWidget {
       },
     );
   }
-}
+
 
 class Background extends StatelessWidget {
   const Background({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox.expand(
+  Widget build(BuildContext context) => SizedBox.expand(
       child: DecoratedBox(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -137,4 +133,3 @@ class Background extends StatelessWidget {
       ),
     );
   }
-}
